@@ -1,0 +1,7 @@
+{
+  "name": "appbut",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

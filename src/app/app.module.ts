@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
 
+
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFireModule } from 'angularfire2';
+import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 export const firebaseConfig = {
   apiKey: 'AIzaSyC_q-B-EJ6F1MJhUHrd--Gu5Dq5xrtlcJ4',
@@ -20,15 +22,25 @@ export const firebaseConfig = {
 };
 
 @NgModule({
-  declarations: [AppComponent],
   entryComponents: [],
+  declarations: [AppComponent,
+
+    ],
   imports: [BrowserModule, IonicModule.forRoot(),
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
-    AngularFireAuthModule
+    AngularFireAuthModule,
 
-  ],
+   ],
   providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
   bootstrap: [AppComponent],
+
+  exports: [
+    FormBuilder,
+    Validators,
+    FormControl
+    ]
+
+
 })
 export class AppModule {}

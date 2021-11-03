@@ -1,16 +1,16 @@
-// import { TestBed } from '@angular/core/testing';
+import { TestBed } from '@angular/core/testing';
 
-// import { IonicAuthService } from './ionic-auth.service';
+import { IonicAuthService } from './ionic-auth.service';
 
-// describe('IonicAuthService', () => {
-//   let service: IonicAuthService;
+describe('IonicAuthService', () => {
+  let service: IonicAuthService;
 
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({});
-//     service = TestBed.inject(IonicAuthService);
-//   });
+  beforeEach(() => {
+    TestBed.configureTestingModule({});
+    service = TestBed.inject(IonicAuthService);
+  });
 
-//   it('should be created', () => {
-//     expect(service).toBeTruthy();
-//   });
-// });
+  it('should be created', () => {
+    expect(service).toBeTruthy();
+  });
+});

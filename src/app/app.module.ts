@@ -12,13 +12,12 @@ import { AngularFireModule } from 'angularfire2';
 import { FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 
 export const firebaseConfig = {
-  apiKey: 'AIzaSyC_q-B-EJ6F1MJhUHrd--Gu5Dq5xrtlcJ4',
-  authDomain: 'appeec-ef7e7.firebaseapp.com',
-  projectId: 'appeec-ef7e7',
-  storageBucket: 'appeec-ef7e7.appspot.com',
-  messagingSenderId: '858490559757',
-  appId: '1:858490559757:web:8ad3f86e65efe60faea444',
-  measurementId: 'G-HXJEHCC2GZ'
+  apiKey: 'AIzaSyDCz8MLV9ltSfnLHT3__7faCFx9NzR7Ouo',
+  authDomain: 'ionicapp-63140.firebaseapp.com',
+  projectId: 'ionicapp-63140',
+  storageBucket: 'ionicapp-63140.appspot.com',
+  messagingSenderId: '515074306028',
+  appId: '1:515074306028:web:c9a611dcee09d659615ac9'
 };
 
 @NgModule({

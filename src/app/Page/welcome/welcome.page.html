@@ -13,10 +13,12 @@
       <div>
         <ion-spinner name="crescent"   *ngIf="companies === 0" style="color:#ed1b2e"></ion-spinner>
       </div>
-       <ion-button expand="block" color="danger"  *ngIf="companies === 5" routerLink="/login" routerDirection="forward">
-        <ion-icon name="logo-googleplus"></ion-icon>
-        Login
-      </ion-button>
+
+      <Div>
+        <ion-button expand="block" color="danger"  *ngIf="companies === 5" routerLink="/login" routerDirection="forward">
+          Login
+        </ion-button>
+      </Div>
 
     </div>
 

@@ -1,21 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { IonicAuthService } from '../../ionic-auth.service';
-import { FormGroup, ReactiveFormsModule, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-
-
-
+import { IonicAuthService } from 'src/app/ionic-auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.page.html',
-  styleUrls: ['./login.page.scss'],
+  selector: 'app-register',
+  templateUrl: './register.page.html',
+  styleUrls: ['./register.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class RegisterPage implements OnInit {
+
 
   userForm: FormGroup;
   successMsg = '';
   errorMsg = '';
+
 
   error_msg= {
     email: [
@@ -33,10 +32,10 @@ export class LoginPage implements OnInit {
         type: 'required',
         message: 'Password is required.'
       },
-      //  {
-      //  type: 'minlength',
-      //  message: 'Password length should be 6 characters long.'
-      // }
+       {
+       type: 'minlength',
+       message: 'Password length should be 6 characters long.'
+      }
     ]
   };
 
@@ -53,23 +52,24 @@ export class LoginPage implements OnInit {
         Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
       ])),
       password: new FormControl('', Validators.compose([
-        // Validators.minLength(6),
+        Validators.minLength(6),
         Validators.required
       ])),
     });
   }
 
-  signIn(value) {
-    this.ionicAuthService.signinUser(value)
+  signUp(value) {
+    this.ionicAuthService.createUser(value)
       .then((response) => {
-        console.log(response);
-        this.errorMsg = '';
-        this.router.navigateByUrl('home');
+        this.errorMsg = "";
+        this.successMsg = "New user created.";
       }, error => {
         this.errorMsg = error.message;
-        this.successMsg = '';
+        this.successMsg = "";
       });
   }
 
-
+  goToLogin() {
+    this.router.navigateByUrl('login');
+  }
 }
